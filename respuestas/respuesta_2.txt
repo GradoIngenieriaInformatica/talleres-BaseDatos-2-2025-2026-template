@@ -1,1 +1,1 @@
-TIPO | Justificación corta
+CLAVE-VALOR | Almacenamiento en memoria para recuperación inmediata de datos mediante una llave única. (Herramienta ideal: Redis o DynamoDB)
