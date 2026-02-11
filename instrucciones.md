@@ -4,36 +4,13 @@
 
 Cada estudiante tiene un **número único** asignado por el docente.
 
-## Grupo asignado
-
-El grupo se calcula así:
-
-numero_estudiante % 4
-
-| Resultado | Grupo |
-|---------|------|
-| 1 | A |
-| 2 | B |
-| 3 | C |
-| 4 | D |
-
-## Entrega obligatoria
-
-Debes crear el archivo:
-
-grupo[letra]/entrega_[NUMERO]>.md
-
-Ejemplo:
-
-grupoA/entrega_17.md
-
-## Commits
+### Commits
 
 Formato obligatorio:
 
-#17#-[descripcion corta]
+#17#-taller-1
 
-## Pull Request
+### Pull Request
 
 Título obligatorio:
 
