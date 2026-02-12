@@ -1,21 +1,36 @@
-name: Evaluacion NoSQL
+name: Evaluacion Masiva Oficial
 
-on: [push]
+on:
+  workflow_dispatch:
 
 jobs:
   evaluar:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+      issues: write
+
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Ejecutar evaluación
-        env:
-          ALUMNOS_GRUPOS: ${{ secrets.ALUMNOS_GRUPOS }}
-          RESPUESTAS_CORRECTAS: ${{ secrets.RESPUESTAS_CORRECTAS }}
+      - name: Instalar GitHub CLI
         run: |
-          python scripts/evaluar.py ${{ github.actor }}
+          sudo apt update
+          sudo apt install gh -y
+
+      - name: Instalar dependencias Python
+        run: pip install requests
+
+      - name: Ejecutar evaluacion
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RESPUESTAS_JSON: ${{ secrets.RESPUESTAS_JSON }}
+          ALUMNOS_CSV: ${{ secrets.ALUMNOS_CSV }}
+        run: python evaluar_masivo.py
+
+      - name: Subir resumen
+        uses: actions/upload-artifact@v3
+        with:
+          name: resumen-evaluacion
+          path: resumen_final.csv
