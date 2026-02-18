@@ -1,1 +1,1 @@
-TIPO | Justificación corta
+DDOCUMENTAL | Almacenamiento de series temporales mediante documentos extendidos para análisis de tendencias. (Herramienta ideal: MongoDB con Time Series collections)

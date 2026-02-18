@@ -1,1 +1,1 @@
-TIPO | Justificación corta
+GRAFOS | Gestión nativa de relaciones complejas y cálculo de caminos cortos entre nodos. (Herramienta ideal: Neo4j)
